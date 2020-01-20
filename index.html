@@ -182,24 +182,24 @@
 </template>
 
 <script>
-  var fireballSize = 22;      //Размер фаербола - не константа, возможно в дальнейшем будем менять размер в меню
-  var wizardSpeed = 3;        // Скорость передвижения мага - не константа, возможно будет доп скорость
-  var wizardWidth = 70;       // Ширина мага - не константа, возможно изменение в настройках
-  var PROPORTION = 1.337;      // константа пропорции высоты к ширине
+  var FIREBALL_SIZE = 22;      
+  var WIZARD_SPEED = 3;        
+  var WIZARD_WIDTH = 70;       
+  var WIZARD_HEIGHT_TO_WIDTH_PROPORTION = 1.337;      
 
-  var getFireballSpeed = function (left) {  //  функция изменения скорости фаербола по ветру
+  var getFireballSpeed = function (left) {  //  где left - скорость по ветру
     return left ? 5 : 2;
   };
 
-  var getWizardHeight = function () {       // высота мага в пропорциии к ширине
-    return wizardWidth * PROPORTION;
+  var getWizardHeight = function () {       
+    return WIZARD_WIDTH * WIZARD_HEIGHT_TO_WIDTH_PROPORTION;
   };
 
-  var getWizardX = function (width) {       //положение мага по горизонтали
-    return (width - wizardWidth) / 2;
+  var getWizardX = function (width) {       
+    return (width - WIZARD_WIDTH) / 2;
   };
 
-  var getWizardY = function (height) {      //положение мага по вертикали
+  var getWizardY = function (height) {      
     return height / 3 - getWizardHeight();
   };
 </script>
