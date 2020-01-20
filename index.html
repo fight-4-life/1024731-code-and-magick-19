@@ -181,6 +181,29 @@
   </div>
 </template>
 
+<script>
+  var FIREBALL_SIZE = 22;      
+  var WIZARD_SPEED = 3;        
+  var WIZARD_WIDTH = 70;       
+  var WIZARD_HEIGHT_TO_WIDTH_PROPORTION = 1.337;      
+
+  var getFireballSpeed = function (left) {  //  где left - скорость по ветру
+    return left ? 5 : 2;
+  };
+
+  var getWizardHeight = function () {       
+    return WIZARD_WIDTH * WIZARD_HEIGHT_TO_WIDTH_PROPORTION;
+  };
+
+  var getWizardX = function (width) {       
+    return (width - WIZARD_WIDTH) / 2;
+  };
+
+  var getWizardY = function (height) {      
+    return height / 3 - getWizardHeight();
+  };
+</script>
+
 <script src="js/game.js"></script>
 
 </body>
